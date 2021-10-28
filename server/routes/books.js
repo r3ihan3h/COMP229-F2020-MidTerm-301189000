@@ -8,7 +8,6 @@ let book = require('../models/books');
 
 /* GET books List page. READ */
 router.get('/', (req, res, next) => {
-  // find all books in the books collection
   book.find( (err, books) => {
     if (err) {
       return console.error(err);
@@ -101,14 +100,7 @@ router.post('/:id', (req, res, next) => {
 router.get('/delete/:id', (req, res, next) => {
 
 
-     book.remove( {_id: req.params.id} , (err) => {
-      if (err) {
-        return console.error(err);
-      }
-      else {
-        res.redirect('/books');
-      }
-    });
+
 });
 
 module.exports = router;
